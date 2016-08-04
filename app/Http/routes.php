@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::get('/catalogue', 'ProductCatalogueController@index');
 Route::get('/product/{id}', ['uses' => 'ProductController@show', 'as' => 'product.show']);
+Route::post('/cart/add', ['uses' => 'CartController@store', 'as' => 'cart.store']);
