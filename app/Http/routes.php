@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/catalogue', 'ProductCatalogueController@index');
+Route::get('/product/{id}', ['uses' => 'ProductController@show', 'as' => 'product.show']);
