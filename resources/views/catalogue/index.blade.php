@@ -18,7 +18,7 @@
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
-                            {{ $product->name }}
+                            <a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a>
                         </div>
 
                         <div class="panel-body">
