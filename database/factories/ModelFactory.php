@@ -36,3 +36,11 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
     ];
 
 });
+
+$factory->define(App\Cart::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => function () {
+            return factory(App\User::class)->create()->id;
+        },
+    ];
+});
