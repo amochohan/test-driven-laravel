@@ -29,12 +29,23 @@ class ProductControllerTest extends TestCase
     public function a_user_can_view_a_products_full_details()
     {
         // Given there are some products in the database
+        $products = factory(\App\Product::class, 15)->create();
+
         // And I am interested in a specific product
+        $interestedInProduct = $products->random();
 
         // When I visit the product catalogue
+        $this->visit('/catalogue');
+
         // And I click on the product that I am interested in
+        $this->click($interestedInProduct->name);
 
         // Then I am redirected to the product's page
+        $this->seePageIs('/products/' . $interestedInProduct->id);
+
         // And I see the full product's details
+        $this->see($interestedInProduct->name);
+        $this->see($interestedInProduct->description);
+        $this->see($interestedInProduct->price);
     }
 }
