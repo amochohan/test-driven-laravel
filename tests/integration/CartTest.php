@@ -20,4 +20,16 @@ class CartTest extends TestCase
         $this->assertInstanceOf(Collection::class, $cart->products);
         $this->assertInstanceOf(App\Product::class, $cart->products->first());
     }
+
+    /** @test */
+    public function a_product_can_be_added_to_the_cart()
+    {
+        // Given there is an empty Cart
+        // And there is a 'Hot dog' product
+
+        // When I add the 'Hot dog' product to the cart
+
+        // Then the cart contains one item
+        // And the item is the 'Hot dog'
+    }
 }
