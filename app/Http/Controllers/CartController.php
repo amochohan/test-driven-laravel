@@ -17,4 +17,11 @@ class CartController extends Controller
 
         return redirect()->route('cart.show');
     }
+
+    public function show()
+    {
+        $cart = \Auth::user()->cart;
+        
+        return view('cart.show', compact('cart'));
+    }
 }
