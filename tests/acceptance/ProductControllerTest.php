@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+class ProductControllerTest extends TestCase
+{
+    use DatabaseMigrations;
+
+    /** @test */
+    public function it_displays_all_of_the_products_in_our_catalogue()
+    {
+        // Given there are 15 products in the database
+        $products = factory(\App\Product::class, 15)->create();
+
+        // When I visit the product catalogue
+        $this->visit('/catalogue');
+
+        // Then I can see all of the products on the page
+        $this->see('Total products: 15');
+
+        $products->each(function (\App\Product $product) {
+            $this->see($product->name);
+        });
+    }
+}
