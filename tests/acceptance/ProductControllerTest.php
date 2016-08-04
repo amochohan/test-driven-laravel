@@ -41,7 +41,7 @@ class ProductControllerTest extends TestCase
         $this->click($interestedInProduct->name);
 
         // Then I am redirected to the product's page
-        $this->seePageIs('/products/' . $interestedInProduct->id);
+        $this->seePageIs('/product/' . $interestedInProduct->id);
 
         // And I see the full product's details
         $this->see($interestedInProduct->name);
