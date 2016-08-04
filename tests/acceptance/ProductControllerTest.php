@@ -24,4 +24,17 @@ class ProductControllerTest extends TestCase
             $this->see($product->name);
         });
     }
+
+    /** @test */
+    public function a_user_can_view_a_products_full_details()
+    {
+        // Given there are some products in the database
+        // And I am interested in a specific product
+
+        // When I visit the product catalogue
+        // And I click on the product that I am interested in
+
+        // Then I am redirected to the product's page
+        // And I see the full product's details
+    }
 }
