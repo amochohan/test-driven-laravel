@@ -13,7 +13,7 @@ class CartController extends Controller
     {
         $product = Product::findOrFail($request->input('product'));
 
-        \Auth::user()->cart()->add($product);
+        \Auth::user()->cart->add($product);
 
         return redirect()->route('cart.show');
     }
