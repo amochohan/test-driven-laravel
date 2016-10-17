@@ -5,7 +5,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Collection;
 
-class CartTest extends TestCase
+class CartIntegrationTest extends TestCase
 {
     use DatabaseMigrations;
 
